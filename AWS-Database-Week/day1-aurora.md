@@ -1,0 +1,51 @@
+# Amazon Aurora
+
+- cloud db
+- different compared to other relational db's
+  - scalable, distributed
+    - split into zones with data replicated across zones
+  - service-oriented architecture AWS's leverages cloud ecosystem
+    - Lambda: invoke Lambda events from stored procedures/triggers
+    - S3: load data from S3 and store backups/snapshots to S3
+    - IAM: use IAM roles to manage db access control
+    - Watch: upload systems metrics
+  - automated admin tasks
+- why RDS
+  - automate admin tasks
+    - developer does schema design, query contruction and optimization
+    - AWS does:
+      - automatic fail-over
+      - backup, recovery,
+      - isolation, security
+      - industry compliance
+      - scaling
+      - patching
+      - monitoring
+      - maintanence
+- compared to Postgres
+  - up to 3x performance/throughput
+  - better availability and durability
+  - reduces cost up to 60%
+  - easy migration with no application charge
+- performance enhancements
+  - read performance
+    - read-ahead (when you read something, chance you will read something next to it is high, so it loads it in advance)
+    - smart selector
+    - read views
+  - write performance
+    - NUMA aware scheduler
+    - latch-free lock manager
+  - meta-data access
+    - instant schema update
+  - availability
+    - 6-way replicated storage
+    - quorums needed for read and write
+- backtracking in the db
+  - you can backtrack to a point without requiring restore from backups
+  - not destructive
+  - good if you're not sure exactly when the db failed
+- clone db easily and quickly because the data isn't copied, copy only happens when original and clone volume data differ
+- use cases
+  - clone a production db to run tests
+  - reorganize a db
+  - save a point in time snapshot
