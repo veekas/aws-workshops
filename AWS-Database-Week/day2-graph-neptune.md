@@ -5,6 +5,22 @@ Richard Elberger
 elberger@amazon.com
 Solutions Architect
 
+## what is a property graph
+- *vertex* or *node*: represents entities/domains
+- *edge*:
+  - directional relationship between vertices
+  - each edge has a label that denotes the type of relationship
+- each vertex and edge has a *unique identifier*
+- *property*: each vertex or edge has properties
+
+## what is an RDF graph
+- RDF graphs are collections of *triples*:
+  - *subject*: internationalized resource identifier (IRI)
+  - *object*
+  - *predicate*
+
+## tinkerpop
+
 ## graph db applications
 - recommendations based on relationships
   - ex. P1 and P2 follow Sport, P1 bought Product, recommend Product to P2
@@ -16,11 +32,13 @@ Solutions Architect
 - navigate tax policies
   - Thomson Reuters use Neptune to create links with data for flobal tax solutions
 
-## existing graph db's
+## existing graph DBs
 
 - hard to scale
 - hard to maintain availability
 - expensive
 
-## fully managed graph database
+## amazon neptune
 
+- fully managed graph database
+- uses Apache Tinkerpop/Gremlin and RDF/SPARKQL
